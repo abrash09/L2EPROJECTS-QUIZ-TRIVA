@@ -2,6 +2,7 @@ import random
 from quiz_question import quiz
 import sys
 import select
+import os
 
 def run_quiz(question_list):
     shulffled_question = question_list.copy()
@@ -26,7 +27,7 @@ def run_quiz(question_list):
                 user_answer = "" # If they take too long, user_answer becomes empty
             if user_answer == "":
                 print("Time up!")
-                print(f"the correct answer is: {q['answer']}")
+                os.system('clear')
                 break
             elif user_answer in ["a", "b", "c", "d"]:
                 break
@@ -40,7 +41,7 @@ def run_quiz(question_list):
                 print("correct")
             else:
                 print("wrong")
-                print(f"The correct answer is: {q['answer']}")
+            os.system('clear')
     print(f"Your final score is:{score}/{len(quiz_questions)}")
 
 def main():
